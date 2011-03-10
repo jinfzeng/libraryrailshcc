@@ -1,0 +1,15 @@
+<!-- app/views/author_books/new.html.erb -->
+<h2>New author_book</h2>
+<%= form_for :author_book, :url => { :action => "create" } do |f| %>
+  <%= f.label "Author's first name: " %>
+  <%= f.text_field :first_name %><br />
+  <%= f.label "Author's last name: " %>
+  <%= f.text_field :last_name %><br />
+  <%= f.label "Author's email: " %>
+  <%= f.text_field :email %><br />
+  <%= f.label "Book title: " %>
+  <%= f.text_field :title %><br />
+  <%= f.label "Book isbn: " %>
+  <%= f.text_field :isbn %><br />
+  <%= f.submit "Submit" %>
+<% end %>

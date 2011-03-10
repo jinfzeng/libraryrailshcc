@@ -1,0 +1,8 @@
+<!-- app/views/author_books/findByTitle.html.erb -->
+<% @authors = @authorbooks.collect {|u| u.last_name}.join ', ' %>
+<% @title = @authorbooks.first.title %>
+<table border="1">
+  <tr>
+    <td><%= @authors %></td><td><%= @title %></td>
+  </tr>
+</table>

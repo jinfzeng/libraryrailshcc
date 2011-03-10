@@ -1,0 +1,13 @@
+<!-- app/views/author_books/index.html.erb -->
+<table border="1">
+  <% @authorbooks.each do |ab| %>
+    <tr>
+      <td> <%= ab.first_name %> <%= ab.last_name %> </td>
+      <td> <%= ab.title %>
+    </tr>
+  <% end %>
+</table>
+<% if cookies.signed[:authenticated] %>
+  <%= link_to "Add new record", :controller => "author_books",
+    :action => "new" %>
+<% end %>

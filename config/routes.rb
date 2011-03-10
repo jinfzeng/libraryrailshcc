@@ -1,4 +1,27 @@
 Libraryrailshcc::Application.routes.draw do
+  get "pages/login"
+  match "pages/login", :via => [:get,:post]
+  match "pages/continue" => "pages#continue"
+
+  get "pages/logout"
+  root :to => "pages#login"
+
+  get "users/new"
+  match "users/create" => "users#create"
+
+  get "users/edit"
+  match "users/update" => "users#update"
+
+  get "users/index"
+
+  get "users/chooseUser"
+  match "users/edit" => "users#edit"
+
+  get "author_books/index"
+  match 'author_books/findByTitle/:title' => "author_books#findByTitle"
+  match "author_books/new" => "author_books#new"
+  match "author_books/create" => "author_books#create"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

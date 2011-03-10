@@ -1,0 +1,13 @@
+<!-- app/views/users/index.html.erb -->
+<table border="1">
+  <% @users.each do |u| %>
+    <tr>
+      <td><%= u.name %></td>
+      <td><%= u.username %></td>
+    </tr>
+  <% end %>
+</table>
+<% if cookies.signed[:user_id] == 1 %>
+  <%= link_to "Add Users", :controller => "users", :action => "new" %>
+  <%= link_to "Edit User", :controller => "users", :action => "chooseUser" %>
+<% end %>
